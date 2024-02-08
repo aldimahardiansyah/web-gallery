@@ -26,3 +26,15 @@ Route::get('/admin', function () {
 
 // Route untuk halaman manajemen admin
 Route::get('/users', [UserController::class, 'index']);
+
+// Route untuk menampilkan form tambah admin
+Route::get('/users/create', [UserController::class, 'create']);
+
+// Route untuk menyimpan data admin baru
+Route::post('/users/store', [UserController::class, 'store']);
+
+// Route untuk menampilkan form edit admin
+Route::get('/users/{id}/edit', [UserController::class, 'edit']);
+
+// Route untuk menyimpan perubahan data admin
+Route::put('/users/{id}/update', [UserController::class, 'update']);
