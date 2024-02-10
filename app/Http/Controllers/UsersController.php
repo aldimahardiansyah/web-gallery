@@ -7,19 +7,26 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    public function index(){
+    public function index()
+    {
+        // Dapatkan semua data admin dari database
+        $users = User::all(); // SELECT * FROM users
+
         return view('admin.users.index', [
-            'title' => 'Manajemen Admin'
+            'title' => 'Manajemen Admin',
+            'users' => $users,
         ]);
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.users.create', [
             'title' => 'Tambah Admin'
         ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         // Simpan data form ke database
         User::create([
             'name' => $request->name,
