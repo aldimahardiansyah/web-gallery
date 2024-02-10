@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,3 +39,9 @@ Route::get('/users/{id}/edit', [UserController::class, 'edit']);
 
 // Route untuk menyimpan perubahan data admin
 Route::put('/users/{id}/update', [UserController::class, 'update']);
+
+// Route untuk menghapus data admin
+Route::get('/users/{id}/destroy', [UserController::class, 'destroy']);
+
+// Route untuk menampilkan halaman login
+Route::get('/login', [AuthController::class, 'showFormLogin']);

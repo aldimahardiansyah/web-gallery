@@ -69,4 +69,17 @@ class UserController extends Controller
         // kembalikan ke halaman manajemen admin
         return redirect('/users')->with('success', 'Data admin berhasil di edit!');
     }
+
+    // method untuk menghapus data admin
+    public function destroy($id)
+    {
+        // cari data admin berdasarkan id
+        $user = User::find($id);
+
+        // hapus data admin
+        $user->delete();
+
+        // kembalikan ke halaman manajemen admin
+        return redirect('/users')->with('success', 'Data admin berhasil dihapus!');
+    }
 }

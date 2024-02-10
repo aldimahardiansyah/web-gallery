@@ -20,7 +20,7 @@
                             <td>{{ $user->email }}</td>
                             <td>
                                 <a href="/users/{{ $user->id }}/edit" class="btn btn-warning">Edit</a>
-                                <a href="#" class="btn btn-danger">Hapus</a>
+                                <a href="/users/{{ $user->id }}/destroy" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin?')">Hapus</a>
                             </td>
                         </tr>
                     @endforeach

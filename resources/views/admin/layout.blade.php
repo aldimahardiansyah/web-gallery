@@ -47,6 +47,7 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
+                @include('admin.partials._success_message')
                 @yield('content')
             </div>
             <!-- ============================================================== -->
