@@ -37,4 +37,44 @@ class UsersController extends Controller
         // Kembalikan ke halaman manajemen admin
         return redirect('/users')->with('success', 'Berhasil menambahkan admin.');
     }
+
+    // method untuk menampilkan form edit admin
+    public function edit($id)
+    {
+        // Cari admin berdasarkan id
+        $user = User::find($id);
+
+        // Tampilkan form edit admin
+        return view('admin.users.edit', [
+            'title' => 'Edit Admin',
+            'user' => $user,
+        ]);
+    }
+
+    // method untuk mengupdate data admin
+    public function update(Request $request, $id)
+    {
+        // Cari admin berdasarkan id
+        $user = User::find($id);
+
+        // Update data admin
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+
+        // Kembalikan ke halaman manajemen admin
+        return redirect('/users')->with('success', 'Berhasil mengedit data admin.');
+    }
+
+    // method untuk menghapus data admin
+    public function destroy($id)
+    {
+        // Hapus data admin berdasarkan id
+        User::destroy($id);
+
+        // Kembalikan ke halaman manajemen admin
+        return redirect('/users')->with('success', 'Berhasil menghapus data admin.');
+    }
 }

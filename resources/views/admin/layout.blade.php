@@ -28,6 +28,13 @@
 
             <!-- Main content -->
             <section class="content">
+                {{-- Tangkap pesan success --}}
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
                 @yield('content')
             </section>
             <!-- /.content -->

@@ -12,12 +12,12 @@
                 </tr>
                 @foreach ($users as $user)
                     <tr>
-                        <td>1</td>
-                        <td>Aldi Mahardiansyah</td>
-                        <td>aldi@gmail.com</td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
                         <td>
-                            <a href="#" class="btn btn-warning">Edit</a>
-                            <a href="#" class="btn btn-danger">Hapus</a>
+                            <a href="/users/{{ $user->id }}/edit" class="btn btn-warning">Edit</a>
+                            <a href="/users/{{ $user->id }}/destroy" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin?')">Hapus</a>
                         </td>
                     </tr>
                 @endforeach

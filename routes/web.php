@@ -29,3 +29,12 @@ Route::get('/users', [UsersController::class, 'index']);
 Route::get('/users/create', [UsersController::class, 'create']);
 
 Route::post('/users/store', [UsersController::class, 'store']);
+
+// Route untuk menampilkan form edit admin
+Route::get('/users/{id}/edit', [UsersController::class, 'edit']);
+
+// Route untuk mengupdate data admin
+Route::put('users/{id}', [UsersController::class, 'update']);
+
+// Route untuk menghapus data admin
+Route::get('users/{id}/destroy', [UsersController::class, 'destroy']);
