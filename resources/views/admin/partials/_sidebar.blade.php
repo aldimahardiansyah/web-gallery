@@ -17,6 +17,24 @@
                         <i data-feather="users" class="feather-icon"></i><span class="hide-menu">Manajemen Admin </span>
                     </a>
                 </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/categories" aria-expanded="false">
+                        <i data-feather="layers" class="feather-icon"></i><span class="hide-menu">Kategori Post</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/posts" aria-expanded="false">
+                        <i data-feather="list" class="feather-icon"></i><span class="hide-menu">Post</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/galleries" aria-expanded="false">
+                        <i data-feather="image" class="feather-icon"></i><span class="hide-menu">Galeri</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

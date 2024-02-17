@@ -8,8 +8,8 @@
             <!-- ============================================================== -->
             <div class="navbar-brand">
                 <!-- Logo icon -->
-                <a href="index.html">
-                    <img src="/assets/images/freedashDark.svg" alt="" class="img-fluid">
+                <a href="/" class="mt-3 ms-3">
+                    <h2>SIGALAH</h2>
                 </a>
             </div>
             <!-- ============================================================== -->
