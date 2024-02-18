@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\HompageController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -19,9 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HompageController::class, 'index']);
 
 // Route untuk menampilkan halaman login
 Route::get('/login', [AuthController::class, 'showFormLogin'])->name('login')->middleware('guest');

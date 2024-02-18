@@ -103,6 +103,16 @@ class GalleryController extends Controller
      */
     public function destroy(Gallery $gallery)
     {
+        // Hapus file foto
+        foreach ($gallery->images as $image) {
+            if (file_exists(public_path('images' . $image->file))) {
+                unlink(public_path($gallery->file));
+            }
+        }
+
+        // Hapus data image yang berkaitan dengan gallery
+        $gallery->images()->delete();
+
         // Hapus data gallery
         $gallery->delete();
 
